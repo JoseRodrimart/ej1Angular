@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpEvent} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Movie } from 'src/app/shared/interfaces/movie.interface';
@@ -12,5 +12,9 @@ export class MovieService {
 
   getMovies():Observable<Array<Movie>>{
     return this.http.get<Array<Movie>>("api/movie");
+  }
+
+  deleteMovie(id: number):Observable<any> {
+    return this.http.delete(`api/movie/${id}`);
   }
 }

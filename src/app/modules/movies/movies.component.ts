@@ -14,10 +14,22 @@ export class MoviesComponent implements OnInit {
   constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
+    this.getMovies();
+  }
+
+  private getMovies(){
     this.movieService
       .getMovies()
       .subscribe(
         movies=>this.movies = movies,
         error=>alert(error));
+  }
+
+  deleteMovie(id: number) {
+    this.movieService
+      .deleteMovie(id)
+      .subscribe(
+        ()=>this.getMovies()
+      );
   }
 }

@@ -1,4 +1,18 @@
-<li>
-  {{movie.title}},
-  {{movie.director}}
-</li>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      {{movie.title}}
+    </mat-card-title>
+    <mat-card-subtitle>{{movie.publicationDate | date:'shortDate'}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+     {{movie.synopsis}}
+    </p>
+    <mat-card-actions align="end" class="align-content-center">
+      <button mat-icon-button color="primary" (click)="deleteMovie()">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card-content>
+</mat-card>

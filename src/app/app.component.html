@@ -1,8 +1,12 @@
-<!-- <ul *ngIf="movies.length>0">
-  <li *ngFor="let movie of movies">
-    {{movie.title}}
-  </li>
-</ul> -->
-<header>Header</header>
+<mat-toolbar color="accent">
+  <span>My Application</span>
+</mat-toolbar>
 <router-outlet></router-outlet>
-<footer>footer</footer>
+<footer class="bg-light text-center text-lg-start">
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2020 Copyright:
+    <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>

@@ -1,7 +1,7 @@
-<ul *ngIf="movies.length>0">
-  <app-movie-card
-  *ngFor="let movie of movies"
-  [movie]="movie">
-  </app-movie-card>
-</ul>
-<!-- <app-movie-card *ngFor="let movie of movies"></app-movie-card> -->
+
+<app-movie-card
+(deleteMovieEvent)="deleteMovie($event)"
+class="card mx-auto my-3"
+*ngFor="let movie of movies"
+[movie]="movie">
+</app-movie-card>

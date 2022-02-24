@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { Movie } from 'src/app/shared/interfaces/movie.interface';
 
 @Component({
@@ -9,10 +9,15 @@ import { Movie } from 'src/app/shared/interfaces/movie.interface';
 export class MovieCardComponent implements OnInit {
 
   @Input() movie!: Movie
+  @Output() deleteMovieEvent = new EventEmitter<number>()
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  deleteMovie():void{
+    this.deleteMovieEvent.emit(this.movie.id)
   }
 
 }
